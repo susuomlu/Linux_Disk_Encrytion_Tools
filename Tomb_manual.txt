@@ -1,0 +1,33 @@
+
+
+Step 0:  Disable Swap partion(if you are using it on your machine)
+
+>> sudo swapoff -a #disable swap
+
+Step 1: Create a "hole"
+
+>> sudo tomb dig -s 100 hole.tomb # DIG 1 hole 100MB in size.
+
+Step 2: Forge a key
+
+>> tomb forge hole.tomb.key
+
+Step 3: Lock it!
+
+>> sudo tomb lock hole.tomb -k hole.tomb.key
+
+
+########################################################
+
+#Open the hole
+sudo tomb open hole.tomb -k hole.tomb.key
+
+#Close the hole
+>> tomb close
+
+OR if you want to close all the holes
+>> sudo tomb slam all
+
+
+#You gonna leave the key outside, wherever you find secure.
+
